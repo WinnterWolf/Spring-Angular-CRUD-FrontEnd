@@ -1,0 +1,45 @@
+<h3>Create Room</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">nome</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="usuario.nome" name="nome">
+    </div>
+
+    <div class="form-group">
+      <label for="name">login</label>
+      <input type="text" class="form-control" id="login" required [(ngModel)]="usuario.login" name="login">
+    </div>
+
+    <div class="form-group">
+      <label for="name">senha</label>
+      <input type="text" class="form-control" id="senha" required [(ngModel)]="usuario.senha" name="senha">
+    </div>
+
+    <div class="form-group">
+        <label for="name">cpf</label>
+        <input type="text" class="form-control" id="cpf" required [(ngModel)]="usuario.cpf" name="cpf">
+      </div>
+
+    <div class="form-group">
+        <label for="name">dataNascimento</label>
+        <input type="text" class="form-control" id="dataNascimento" required [(ngModel)]="usuario.dataNascimento" name="dataNascimento">
+      </div>
+
+    <div class="form-group">
+        <label for="name">sexo</label>
+        <input type="text" class="form-control" id="sexo" required [(ngModel)]="usuario.sexo" name="sexo">
+      </div>
+
+    <div class="form-group">
+        <label for="name">estadoCivil</label>
+        <input type="text" class="form-control" id="estadoCivil" required [(ngModel)]="usuario.estadoCivil" name="estadoCivil">
+      </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <button class="btn btn-success" (click)="newRoom()">Add</button> -->
+</div>
