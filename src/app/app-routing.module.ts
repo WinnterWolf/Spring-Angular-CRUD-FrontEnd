@@ -1,7 +1,17 @@
+import { UsuarioDetailsComponent } from './usuario-details/usuario-details.component';
+import { CreateUsuarioComponent } from './create-usuario/create-usuario.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { UsuarioListComponent } from './usuario-list/usuario-list.component';
+import { UpdateUsuarioComponent } from './update-usuario/update-usuario.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: 'usuarios', pathMatch: 'full' },
+  { path: 'usuarios', component: UsuarioListComponent },
+  { path: 'add', component: CreateUsuarioComponent },
+  { path: 'update/:id', component: UpdateUsuarioComponent },
+  { path: 'details/:id', component: UsuarioDetailsComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

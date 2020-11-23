@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UsuarioDetailsComponent} from 'src/app/usuario-details.component';
+//import {UsuarioDetailsComponent} from 'src/app/usuario-details.component';
 import {Observable} from "rxjs";
 import {UsuarioService} from "../usuario.service";
 import {Usuario} from "../usuario";
