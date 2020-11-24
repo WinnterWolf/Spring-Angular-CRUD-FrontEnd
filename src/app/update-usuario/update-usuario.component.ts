@@ -21,20 +21,12 @@ export class UpdateUsuarioComponent implements OnInit {
     this.usuario = new Usuario;
     this.id = this.route.snapshot.params['id'];
 
-    this.usuarioService.getUsuario(this.id)
-    .subscribe(data => {
-      console.log(data);
-      this.usuario = data;
-    }, error => console.log(error)
-    );
+    let data =this.usuarioService.getUsuario(this.id);
+    
   }
 
   updateUsuario(){
-    this.usuarioService.updateUsuario(this.id, this.usuario)
-    .subscribe(data => {
-      console.log(data)
-    }, error => console.log(error)
-    );
+    this.usuarioService.updateUsuario(this.id, this.usuario);
     this.usuario = new Usuario;
     this.goToList(); 
   }

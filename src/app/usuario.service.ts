@@ -16,7 +16,19 @@ export class UsuarioService {
   constructor(private http: HttpClient) { }
 
   getUsuario(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${id}`);
+    
+    return $.ajax({
+      url: `${this.baseUrl}/${id}`,
+      type: "GET", 
+    }).done(function(resposta) {
+      console.log(resposta);
+  
+    }).fail(function(jqXHR, textStatus ) {
+      console.log("Request failed: " + textStatus);
+  
+    }).always(function() {
+      console.log("Request Ajax completo");
+    });
   }
 
   createUsuario(usuario: Object): Observable<Object> {
@@ -27,26 +39,66 @@ export class UsuarioService {
       dataType: "json",
       contentType: "application/json; charset=utf-8",
   
-  }).done(function(resposta) {
+    }).done(function(resposta) {
       console.log(resposta);
   
-  }).fail(function(jqXHR, textStatus ) {
+    }).fail(function(jqXHR, textStatus ) {
       console.log("Request failed: " + textStatus);
   
-  }).always(function() {
-      console.log("completou");
-  });
+    }).always(function() {
+      console.log("Request Ajax completo");
+    });
   }
 
   updateUsuario(id: number, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/${id}`, value);
+    //return this.http.put(`${this.baseUrl}/${id}`, value);
+    return $.ajax({
+      url: `${this.baseUrl}/${id}`,
+      type: "PUT", 
+      data: JSON.stringify(value),
+      dataType: "json",
+      contentType: "application/json; charset=utf-8",
+
+    }).done(function(resposta) {
+      console.log(resposta);
+  
+    }).fail(function(jqXHR, textStatus ) {
+      console.log("Request failed: " + textStatus);
+  
+    }).always(function() {
+      console.log("Request Ajax completo");
+    });
   }
 
   deleteUsuario(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+    //return this.http.delete(`${this.baseUrl}/${id}`,);
+    return $.ajax({
+      url: `${this.baseUrl}/${id}`,
+      type: "DELETE", 
+    }).done(function(resposta) {
+      console.log(resposta);
+  
+    }).fail(function(jqXHR, textStatus ) {
+      console.log("Request failed: " + textStatus);
+  
+    }).always(function() {
+      console.log("Request Ajax completo");
+    });
   }
 
   getUsuarioList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}`);
+    //return this.http.get(`${this.baseUrl}`);
+    return $.ajax({
+      url: `${this.baseUrl}`,
+      type: "GET", 
+    }).done(function(resposta) {
+      console.log(resposta);
+  
+    }).fail(function(jqXHR, textStatus ) {
+      console.log("Request failed: " + textStatus);
+  
+    }).always(function() {
+      console.log("Request Ajax completo");
+    });
   }
 }

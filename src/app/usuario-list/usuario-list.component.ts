@@ -29,14 +29,8 @@ reloadData(){
 }
 
 deleteUsuario (id: number){
-  this.usuarioService.deleteUsuario(id)
-  .subscribe(
-    data=>{
-      console.log(data)
-      this.reloadData();
-    },
-    error => console.log(error)
-  );
+  this.usuarioService.deleteUsuario(id);
+  this.reloadData();
 }
 usuarioDetails(id: number){
   this.router.navigate(['details', id]);
