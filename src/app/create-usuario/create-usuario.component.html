@@ -1,9 +1,13 @@
-<h3>Create Usuario</h3>
+<head>
+  <title>Como Validar um Formulário dinamicamente com jQuery</title>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" ></script>
+  </head>
+<h3>Create Room</h3>
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">nome</label>
-      <input type="text" class="form-control" id="nome" required [(ngModel)]="usuario.nome" name="nome">
+      <input type="text" class="form-control" id="name" required [(ngModel)]="usuario.nome" name="nome">
     </div>
 
     <div class="form-group">
