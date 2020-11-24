@@ -14,8 +14,7 @@ import { CreateUsuarioSinglePageComponent } from './create-usuario-single-page/c
     AppComponent,
     CreateUsuarioComponent,
     UsuarioListComponent,
-    UpdateUsuarioComponent,
-    CreateUsuarioSinglePageComponent
+    UpdateUsuarioComponent
   ],
   imports: [
     BrowserModule,
