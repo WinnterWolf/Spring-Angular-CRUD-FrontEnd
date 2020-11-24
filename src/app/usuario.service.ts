@@ -20,23 +20,22 @@ export class UsuarioService {
   }
 
   createUsuario(usuario: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}`, usuario);
-  //   return $.ajax({
-  //     url: `${this.baseUrl}`,
-  //     type: "POST",
-  //     data: JSON.stringify({usuario}),
-  //     dataType: "json",
-  //     contentType: "application/json; charset=utf-8",
+    return $.ajax({
+      url: `${this.baseUrl}`,
+      type: "POST",
+      data: JSON.stringify(usuario),
+      dataType: "json",
+      contentType: "application/json; charset=utf-8",
   
-  // }).done(function(resposta) {
-  //     console.log(resposta);
+  }).done(function(resposta) {
+      console.log(resposta);
   
-  // }).fail(function(jqXHR, textStatus ) {
-  //     console.log("Request failed: " + textStatus);
+  }).fail(function(jqXHR, textStatus ) {
+      console.log("Request failed: " + textStatus);
   
-  // }).always(function() {
-  //     console.log("completou");
-  // });
+  }).always(function() {
+      console.log("completou");
+  });
   }
 
   updateUsuario(id: number, value: any): Observable<Object> {
