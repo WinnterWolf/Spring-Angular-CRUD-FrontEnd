@@ -46,21 +46,4 @@ updateUsuario(id: number){
   this.router.navigate(['update', id]);
 }
 
-//metodos para criar usuario
-newUsuario(): void {
-  this.submitted = false;
-  this.usuario = new Usuario();
-}
-
-save() {
-  this.usuarioService.createUsuario(this.usuario)
-    .subscribe(data => console.log(data), error => console.log(error));
-  this.usuario = new Usuario();
-  // this.gotoList();
-}
-
-onSubmit() {
-  this.submitted = true;
-  this.save();    
-}
 }

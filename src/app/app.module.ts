@@ -7,13 +7,15 @@ import { CreateUsuarioComponent } from './create-usuario/create-usuario.componen
 import { UsuarioListComponent } from './usuario-list/usuario-list.component';
 import { UpdateUsuarioComponent } from './update-usuario/update-usuario.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CreateUsuarioSinglePageComponent } from './create-usuario-single-page/create-usuario-single-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateUsuarioComponent,
     UsuarioListComponent,
-    UpdateUsuarioComponent
+    UpdateUsuarioComponent,
+    CreateUsuarioSinglePageComponent
   ],
   imports: [
     BrowserModule,
