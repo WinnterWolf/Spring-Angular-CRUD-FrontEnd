@@ -3,44 +3,80 @@
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" ></script>
   </head>
 <h3>Create Room</h3>
-<div [hidden]="submitted" style="width: 400px;">
-  <form (ngSubmit)="onSubmit()">
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
     <div class="form-group">
-      <label for="name">nome</label>
-      <input type="text" class="form-control" id="name" required [(ngModel)]="usuario.nome" name="nome">
+      <label for="name">Nome</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="usuario.nome" name="nome" #name="ngModel">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+        <div *ngIf="name.errors.required">
+           O campo Nome é Obrigatório
+        </div>
+      </div>
     </div>
 
     <div class="form-group">
-      <label for="name">login</label>
-      <input type="text" class="form-control" id="login" required [(ngModel)]="usuario.login" name="login">
+      <label for="name">Login</label>
+      <input type="text" class="form-control" id="login" required [(ngModel)]="usuario.login" name="login" #login="ngModel">
+      <div *ngIf="login.invalid && (login.dirty || login.touched)" class="alert alert-danger">
+        <div *ngIf="login.errors.required">
+          O campo Login é Obrigatório
+        </div>
+      </div>
     </div>
 
     <div class="form-group">
-      <label for="name">senha</label>
-      <input type="text" class="form-control" id="senha" required [(ngModel)]="usuario.senha" name="senha">
+      <label for="name">Senha</label>
+      <input type="text" class="form-control" id="senha" required [(ngModel)]="usuario.senha" name="senha" #senha="ngModel">
+      <div *ngIf="senha.invalid && (senha.dirty || senha.touched)" class="alert alert-danger">
+        <div *ngIf="senha.errors.required">
+          O campo Senha é Obrigatório
+        </div>
+      </div>
     </div>
 
     <div class="form-group">
-        <label for="name">cpf</label>
-        <input type="text" class="form-control" id="cpf" required [(ngModel)]="usuario.cpf" name="cpf">
+        <label for="name">CPF</label>
+        <input type="text" class="form-control" id="cpf" required [(ngModel)]="usuario.cpf" name="cpf" #cpf="ngModel">
+        <div *ngIf="cpf.invalid && (cpf.dirty || cpf.touched)" class="alert alert-danger">
+          <div *ngIf="cpf.errors.required">
+            O campo CPF é Obrigatório
+          </div>
+        </div>
       </div>
 
     <div class="form-group">
-        <label for="name">dataNascimento</label>
-        <input type="text" class="form-control" id="dataNascimento" required [(ngModel)]="usuario.dataNascimento" name="dataNascimento">
+        <label for="name">Data de nascimento</label>
+        <input type="text" class="form-control" id="dataNascimento" required [(ngModel)]="usuario.dataNascimento" name="dataNascimento" #dataNascimento="ngModel">
+        <div *ngIf="dataNascimento.invalid && (dataNascimento.dirty || dataNascimento.touched)" class="alert alert-danger">
+          <div *ngIf="dataNascimento.errors.required">
+            O campo Data de nascimento é Obrigatório
+          </div>
+        </div>
       </div>
 
     <div class="form-group">
-        <label for="name">sexo</label>
-        <input type="text" class="form-control" id="sexo" required [(ngModel)]="usuario.sexo" name="sexo">
+        <label for="name">Sexo</label>
+        <input type="text" class="form-control" id="sexo" required [(ngModel)]="usuario.sexo" name="sexo" #sexo="ngModel">
+        <div *ngIf="sexo.invalid && (sexo.dirty || sexo.touched)" class="alert alert-danger">
+          <div *ngIf="sexo.errors.required">
+            O campo Sexo é Obrigatório
+          </div>
+        </div>
       </div>
 
     <div class="form-group">
-        <label for="name">estadoCivil</label>
-        <input type="text" class="form-control" id="estadoCivil" required [(ngModel)]="usuario.estadoCivil" name="estadoCivil">
+        <label for="name">Estado civil</label>
+        <input type="text" class="form-control" id="estadoCivil" required [(ngModel)]="usuario.estadoCivil" name="estadoCivil" #estadoCivil="ngModel">
+        <div *ngIf="estadoCivil.invalid && (estadoCivil.dirty || estadoCivil.touched)" class="alert alert-danger">
+          <div *ngIf="estadoCivil.errors.required">
+            O campo Estado Civil é Obrigatório
+          </div>
+        </div>
       </div>
 
-    <button type="submit" class="btn btn-success">Submit</button>
+      
+    <button type="submit" class="btn btn-success" [disabled]="form.invalid" >Submit</button>
   </form>
 </div>
 
