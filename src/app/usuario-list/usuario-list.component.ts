@@ -24,20 +24,26 @@ export class UsuarioListComponent implements OnInit {
     this.reloadData();
   }
 
-reloadData(){
-  this.usuarios=this.usuarioService.getUsuarioList();
-}
+  reloadData(){
+    this.usuarios=this.usuarioService.getUsuarioList();
+  }
 
-deleteUsuario (id: number){
-  this.usuarioService.deleteUsuario(id);
-  this.reloadData();
-}
-usuarioDetails(id: number){
-  this.router.navigate(['details', id]);
-}
+  deleteUsuario (id: number){
+    let us = this.usuarioService.deleteUsuario(id);
+    us.then(data=>{
+            console.log(data)
+            this.reloadData();
+          },
+          error => console.log(error)
+    );
+  }
 
-updateUsuario(id: number){
-  this.router.navigate(['update', id]);
-}
+  usuarioDetails(id: number){
+    this.router.navigate(['details', id]);
+  }
+
+  updateUsuario(id: number){
+    this.router.navigate(['update', id]);
+  }
 
 }

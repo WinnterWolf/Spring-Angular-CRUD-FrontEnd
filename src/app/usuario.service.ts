@@ -70,7 +70,7 @@ export class UsuarioService {
     });
   }
 
-  deleteUsuario(id: number): Observable<any> {
+  deleteUsuario(id: number): any{
     //return this.http.delete(`${this.baseUrl}/${id}`,);
     return $.ajax({
       url: `${this.baseUrl}/${id}`,
