@@ -71,7 +71,7 @@ export class UsuarioService {
   }
 
   deleteUsuario(id: number): any{
-    //return this.http.delete(`${this.baseUrl}/${id}`,);
+
     return $.ajax({
       url: `${this.baseUrl}/${id}`,
       type: "DELETE", 
@@ -87,7 +87,7 @@ export class UsuarioService {
   }
 
   getUsuarioList(): Observable<any> {
-    //return this.http.get(`${this.baseUrl}`);
+    
     return $.ajax({
       url: `${this.baseUrl}`,
       type: "GET", 
