@@ -8,7 +8,7 @@
                 <tr>
                     <th>Nome</th>
                     <th>Login</th>
-                    <th>Senha</th>
+                    <!-- <th>Senha</th> -->
                     <th>CPF</th>
                     <th>Data de nascimento</th>
                     <th>Sexo</th>
@@ -19,7 +19,8 @@
                 <tr *ngFor="let usuario of usuarios | async">
                     <td>{{usuario.nome}}</td>
                     <td>{{usuario.login}}</td>
-                    <td>{{usuario.senha}}</td>
+                    <!-- Medidas de segurança -->
+                    <!-- <td >{{usuario.senha}}</td> -->
                     <td>{{usuario.cpf}}</td>
                     <td>{{usuario.dataNascimento}}</td>
                     <td>{{usuario.sexo}}</td>

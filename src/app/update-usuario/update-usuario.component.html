@@ -25,7 +25,7 @@
 
     <div class="form-group">
       <label for="name">Senha</label>
-      <input type="text" class="form-control" id="senha" required [(ngModel)]="usuario.senha" name="senha" #senha="ngModel">
+      <input type="password" class="form-control" id="senha" required [(ngModel)]="usuario.senha" name="senha" #senha="ngModel">
       <div *ngIf="senha.invalid && (senha.dirty || senha.touched)" class="alert alert-danger">
         <div *ngIf="senha.errors.required">
           O campo Senha é Obrigatório
