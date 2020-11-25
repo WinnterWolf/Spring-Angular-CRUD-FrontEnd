@@ -2,7 +2,7 @@
 
 <h3>Update Usuario</h3>
 <div [hidden]="submitted" style="width: 400px;">
-  <form (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="onSubmit()" #updateForm="ngForm">
     <div class="form-group">
       <label for="name">Nome</label>
       <input type="text" class="form-control" id="name" required [(ngModel)]="usuario.nome" name="nome" #name="ngModel">
@@ -73,6 +73,6 @@
         </div>
       </div>
 
-    <button type="submit" class="btn btn-success" >Submit</button>
+    <button type="submit" class="btn btn-success" [disabled]="updateForm.invalid">Submit</button>
   </form>
 </div>
