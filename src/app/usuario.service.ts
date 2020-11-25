@@ -15,7 +15,7 @@ export class UsuarioService {
 
   constructor(private http: HttpClient) { }
 
-  getUsuario(id: number): Observable<any> {
+  getUsuario(id: number): any {
     
     return $.ajax({
       url: `${this.baseUrl}/${id}`,
@@ -50,7 +50,7 @@ export class UsuarioService {
     });
   }
 
-  updateUsuario(id: number, value: any): Observable<Object> {
+  updateUsuario(id: number, value: any): any{
     //return this.http.put(`${this.baseUrl}/${id}`, value);
     return $.ajax({
       url: `${this.baseUrl}/${id}`,

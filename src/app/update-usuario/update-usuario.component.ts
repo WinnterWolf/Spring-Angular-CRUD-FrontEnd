@@ -22,13 +22,25 @@ export class UpdateUsuarioComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
 
     let data =this.usuarioService.getUsuario(this.id);
+    data.then(data=>{
+              console.log(data)
+              this.usuario = data
+            },
+            error => console.log(error)
+      );
     
   }
-
+  
   updateUsuario(){
-    this.usuarioService.updateUsuario(this.id, this.usuario);
-    this.usuario = new Usuario;
-    this.goToList(); 
+    let update = this.usuarioService.updateUsuario(this.id, this.usuario);
+    
+    update.then(data=>{
+              console.log(data)
+              this.usuario = new Usuario;
+              this.goToList(); 
+            },
+            error => console.log(error)
+      );
   }
 
   onSubmit(){
