@@ -51,7 +51,7 @@ export class UsuarioService {
   }
 
   updateUsuario(id: number, value: any): any{
-    //return this.http.put(`${this.baseUrl}/${id}`, value);
+    
     return $.ajax({
       url: `${this.baseUrl}/${id}`,
       type: "PUT", 
